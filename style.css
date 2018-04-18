@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+/* color: #FF9800; orange */
+/* rgb(199, 93, 22); dark orange */
+/* hsla(230,40%,50%,1) purple blue */
+
+/* ====================================general stylin================================================== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 2%;
+}
+
+/* ========================================== modat styling============================================ */
+
+/* Trigger/Open The Modal */
+#myBtn {
+    position: absolute;
+}
+
+/* The Modal (background) */
+.modal {
+    /* hidden by defauly */
+    /* display: block;  */
+    position:fixed;  /*Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color*/
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity  .. if you want the page to be blacked when loading the page -- comment this line */
+}
+
+/* Modal Content */
+.modal-content {
+    background-image: url("./imgs/modal.png");/* make the chicken  img as the background*/
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: top; /*to plase the baskgroung more towards the top*/
+    margin: auto;
+    padding: 20px;/* to create some space between the img and the title*/ 
+    border: 1px solid #888;/*to change the borders color from black to grey*/
+    width: 30%; /*to sit the modal to take only 30% of the page width*/
+    height: 500px;/*to sit the modal to take only 500px of the page height*/
+}
+
+
+/* The Close Button "X" */
+.close {
+    color: #aaaaaa;
+    float: left;/* to place x in the top left corner */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* to darken the color of the button when hovering over it  */
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*styling the game name*/
+.title1{
+    color:rgb(253, 253, 253);
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family: 'Righteous', serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-shadow: 3px 7px hsla(230,40%,50%,1);
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+
+.group .btn {
+    background-color: #FF9800; 
+    /* border: 1px   #FF9800; */
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Righteous', serif;
+    font-size: 20px;
+    cursor: pointer;
+    width: 300px;
+    display: block; /*Make the buttons appear below each other */
+    position: relative;
+    top: 250px;
+    left: 50px;
+}
+
+.group .btn:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.group .btn:hover {
+    background-color: rgb(199, 93, 22);
+}
+
+
+/*===============================how to play button syling====================================*/
+
+.mdl{
+    /*display: block;  Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); Fallback color
+    background-color: rgba(0,0,0,0.4); Black w/ opacity  .. if you want the page to be blacked when loading the page -- comment this line  */
+}
+
+.mdl-content {
+    /* display: block; */
+    margin: auto;
+    padding: 20px;/* to create some space between the img and the title*/ 
+    border: 1px solid #888;/*to change the borders color from black to grey*/
+    width: 30%; /*to sit the modal to take only 30% of the page width*/
+    height: 500px;/*to sit the modal to take only 500px of the page height*/
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

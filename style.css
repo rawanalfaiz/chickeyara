@@ -14,7 +14,7 @@ body {
     margin: 2%;
 }
 
-/* ========================================== modat styling============================================ */
+/* ========================================== modal styling============================================ */
 
 /* Trigger/Open The Modal */
 #myBtn {
@@ -130,21 +130,12 @@ body {
     width: 30%; /*to sit the modal to take only 30% of the page width*/
     height: 500px;/*to sit the modal to take only 500px of the page height*/
 }
- 
 
-
-
-
-
-
-
-
-
-
-
+/* ==========================egg styling========================================= */
   
-
-
+.permaBlocked{
+    pointer-events: none;
+  }
 
 
 

@@ -2,9 +2,9 @@
 var x = Math.floor(Math.random()* 1000);//choosing a horizental point randomlly 
 var y = Math.floor(Math.random()* 350); //choosing a virtical point randomlly-- its been set to be 350 so it always choose a point in the middle
 var chickenImg = new Image();   
-var imagesource = "./imgs/chicken1.png";
+var imagesource = "../imgs/chicken1.png";
 var eggImage = new Image();
-eggImage.src = "./imgs/egg1.png";
+eggImage.src = "../imgs/egg1.png";
 var eggs = [];
 //=========================global variables==================================
 //================================work in grogress=====================================================
@@ -80,7 +80,7 @@ function runAround(x,y){
 
     switch(direction){
         case 1:  //go rigth               
-            chickenImg.src = "./imgs/chicken4.png";
+            chickenImg.src = "../imgs/chicken4.png";
             intervalId = setInterval(function(){
                 if (limits(x+20, y, intervalId)){
                     ctx.clearRect(x,y, 1300, 490);
@@ -90,13 +90,13 @@ function runAround(x,y){
                 ctx.drawImage(chickenImg, x+20, y, 100, 100);
                 x+=20;
                 }
-            },50)
+            },100)
         
         break;
 
 
         case 2:// go down
-            chickenImg.src = "./imgs/chicken3.png";
+            chickenImg.src = "../imgs/chicken3.png";
             intervalId =setInterval(function(){
                 if (limits(x, y+20, intervalId)){
                     ctx.clearRect(x,y, 1300, 490);
@@ -106,12 +106,12 @@ function runAround(x,y){
                 ctx.drawImage(chickenImg, x, y+20, 100, 100);
                 y+=20;
                 }
-            },50)
+            },100)
 
         break;
 
         case 3:// go left
-            chickenImg.src = "./imgs/chicken1.png";
+            chickenImg.src = "../imgs/chicken1.png";
             intervalId =setInterval(function(){
                 if (limits(x-20, y, intervalId)){
                     ctx.clearRect(x,y, 1300, 490);
@@ -121,13 +121,13 @@ function runAround(x,y){
                 ctx.drawImage(chickenImg, x-20, y, 100, 100);
                 x-=20;
                 }
-            },50) 
+            },100) 
 
         break;
 
 
         case 4: // go up
-            chickenImg.src = "./imgs/chicken2.png";
+            chickenImg.src = "../imgs/chicken2.png";
             intervalId =setInterval(function(){
                 if (limits(x, y-20, intervalId)){
                     ctx.clearRect(x,y, 1300, 490);
@@ -137,7 +137,7 @@ function runAround(x,y){
                 ctx.drawImage(chickenImg, x, y-20, 100, 100);
                 y-=20;
                 }
-            },50)
+            },100)
 
         break;
     } // end switch
@@ -147,7 +147,7 @@ function runAround(x,y){
 
         if(e.clientX >= x && e.clientX <= x+100 && e.clientY >= y && e.clientY <= y+100 ){ //https://stackoverflow.com/questions/55677/how-do-i-get-the-coordinates-of-a-mouse-click-on-a-canvas-element/18053642#18053642
             eggs.push({
-                xvalue: x,// saving the coordinates  for each egg
+                xvalue: x,/// saving the coordinates for each egg
                 yvalue: y,
             })
             // console.log("chicken")

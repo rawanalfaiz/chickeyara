@@ -9,6 +9,8 @@ $(document).ready(function(){// when opening the index.html page on the browser
     can.width = 1350;
     can.height = 600; 
     ctx = can.getContext('2d');
+    appear();
+
 
     console.log("hi");// for test purpaces
     
@@ -48,8 +50,8 @@ $(document).ready(function(){// when opening the index.html page on the browser
     document.getElementById("start-button").onclick = function(){
         modal.style.display = "none";
          // calling the function that make the chicken pop up
-         appear();
-    
+         location.reload();
+
     }
 
 
@@ -83,7 +85,10 @@ $(document).ready(function(){// when opening the index.html page on the browser
 
 //===========================================================================
 
-//=============================end of modal==================================
+//=============================page transestion==============================
+window.addEventListener("beforeunload", function () {
+    document.body.classList.add("animate-out");
+  });
 
 //================================canvas=====================================
 

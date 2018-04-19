@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
 
 /* color: #FF9800; orange */
 /* rgb(199, 93, 22); dark orange */
@@ -14,17 +16,118 @@ body {
     margin: 2%;
 }
 
-/* ========================================== modal styling============================================ */
+
+/* ==========================index page styling========================================= */
+
+#splash{
+    width: 70%;
+    height: 550px;
+    position: absolute;  
+}
+
+.title1{
+    color:rgb(245, 244, 231);
+    text-shadow: 3px 7px hsla(230,40%,50%,1);
+    /* font-family: 'Luckiest Guy', cursive; */
+    font-family: 'Amatic SC', cursive;
+    font-size: 10rem;
+    font-weight: bolder;
+    text-align: center;
+    position: relative;
+    top: 120px;
+    left: 30px;
+}
+
+.group1 .btn1 {
+    background-color: #FF9800; 
+    border-right-color:rgb(199, 93, 22);
+    border-bottom-color: rgb(199, 93, 22);
+    border-radius: 15px;
+    color: white;
+    padding: 10px 32px;
+    margin: 5% 3%;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Righteous', serif;
+    font-size: 30px;
+    cursor: pointer;
+    width: 300px;
+    height: 100px;
+    display: block; /*Make the buttons appear below each other */
+    position: relative;
+    /* top: 100px; */
+    left:1000px;
+    bottom: 70px;
+}
+
+.group1 .btn1:not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+}
+
+.group1 .btn1:hover {
+    background-color: rgb(199, 93, 22);
+}
+
+/*=============================instruction page styling============================ */
+
+#playModal {
+    background-color: #FF9800;
+    display: flex;
+    justify-content: center;
+}
+
+.prg {
+    background-color: white;
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    border: 10px solid rgb(245, 244, 231);
+    border-radius: 15px;
+    width: 60%;
+    height: 300px;
+    padding: 10px;
+    margin: 10%;
+}
+
+/* ==========================canvas styling========================================= */
+
+/* #canvas1{
+    width: 80%;
+    height: 400px;
+} */
+
+/* ===================================game page styling=============================================== */
+
+/*======= header styling ========*/
+
+.header{
+    border: 5px solid hsla(230,40%,50%,1);
+}
+
+.header > ul >li{
+    font-family: 'Amatic SC', cursive;
+    padding: 0 auto;
+    margin: 0 13%;
+    font-size: 40px;
+    display: inline;
+    text-decoration: none;
+}
 
 /* Trigger/Open The Modal */
 #myBtn {
     position: absolute;
 }
 
+.homeImg{
+    padding: 10px 0px 0px 10px;
+    width: 60px;
+    height: 60px;
+}
+/*======= modal styling ==========*/
+
 /* The Modal (background) */
 .modal {
-    /* hidden by defauly */
-    /* display: block;  */
+    
+    /* display: block; hidden by defauly */
     position:fixed;  /*Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -39,7 +142,7 @@ body {
 
 /* Modal Content */
 .modal-content {
-    background-image: url("./imgs/modal.png");/* make the chicken  img as the background*/
+    background-image: url("../imgs/modal.png");/* make the chicken  img as the background*/
     background-size: 70% 70%;
     background-repeat: no-repeat;
     background-position: top; /*to plase the baskgroung more towards the top*/
@@ -68,11 +171,11 @@ body {
 }
 
 /*styling the game name*/
-.title1{
+.title{
     color:rgb(253, 253, 253);
     /* font-family: 'Luckiest Guy', cursive; */
-    font-family: 'Righteous', serif;
-    font-size: 3rem;
+    font-family: 'Amatic SC', cursive;
+    font-size: 5rem;
     font-weight: bolder;
     text-shadow: 3px 7px hsla(230,40%,50%,1);
     text-align: center;
@@ -104,44 +207,6 @@ body {
 .group .btn:hover {
     background-color: rgb(199, 93, 22);
 }
-
-
-/*===============================how to play button syling====================================*/
-
-.mdl{
-    /*display: block;  Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    /* background-color: rgb(0,0,0); Fallback color
-    background-color: rgba(0,0,0,0.4); Black w/ opacity  .. if you want the page to be blacked when loading the page -- comment this line  */
-}
-
-.mdl-content {
-    /* display: block; */
-    margin: auto;
-    padding: 20px;/* to create some space between the img and the title*/ 
-    border: 1px solid #888;/*to change the borders color from black to grey*/
-    width: 30%; /*to sit the modal to take only 30% of the page width*/
-    height: 500px;/*to sit the modal to take only 500px of the page height*/
-}
-
-/* ==========================egg styling========================================= */
-  
-.permaBlocked{
-    pointer-events: none;
-  }
-
-
-
-
-
-
 
 
 

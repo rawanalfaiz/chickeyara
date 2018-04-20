@@ -168,36 +168,52 @@ function runAround(x,y)
     } // end switch
 
 
-    can.onclick = function (e) {   
+    can.onclick = function (e) {
         //new part== check if the there is another egg
         // var newEgg = { };
         // newEgg.x = x;
         // newEgg.y = y;
-        
+
         // ends here
-        
+        var crash = false;
         if(e.clientX >= x && e.clientX <= x+100 && e.clientY >= y && e.clientY <= y+100 ){ //https://stackoverflow.com/questions/55677/how-do-i-get-the-coordinates-of-a-mouse-click-on-a-canvas-element/18053642#18053642
            var newEgg = {
             xvalue: x,/// saving the coordinates for each egg
             yvalue: y,
-        }
-        
-        
+
+        };
+
+
         eggs.forEach(function(eachEgg){
             eggs.push(newEgg);
             if( Math.abs(newEgg.xvalue - eachEgg.xvalue) <=40 &&  Math.abs(newEgg.yvalue - eachEgg.yvalue)<=40){
-                console.log(eachEgg);
-                console.log(newEgg);
-                
+                // console.log(eachEgg);
+                // console.log(newEgg);
+
                 eggs.pop(newEgg);
-                return ("OH NO!!!!!!");
+                crash = true;
+                // alert("OH NO!!!!!!");
+
             }
-        })
-        // console.log("chicken")
-        // console.log(eggs);            
-        eggs.push(newEgg);
-        }   
-    }
+
+        });
+          if(crash === true) {
+            eggCount--;
+            alert("crash");
+            console.log(eggCount);
+            setTimeout(function() {
+              crash = false;
+            }, 1);
+          } else {
+            eggCount++;
+            // console.log("chicken")
+            // console.log(eggs);
+            eggs.push(newEgg);
+            console.log(eggCount);
+
+          }
+        }
+    };
     
 
 
@@ -205,7 +221,6 @@ function runAround(x,y)
          clearInterval(intervalId);
          runAround(x,y);
     }, rndmIntrvl )
-
 }
 
    

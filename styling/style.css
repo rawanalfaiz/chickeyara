@@ -88,13 +88,6 @@ body {
     margin: 10%;
 }
 
-/* ==========================canvas styling========================================= */
-
-/* #canvas1{
-    width: 80%;
-    height: 400px;
-} */
-
 /* ===================================game page styling=============================================== */
 
 /*======= header styling ========*/
@@ -122,6 +115,12 @@ body {
     width: 60px;
     height: 60px;
 }
+
+/* ===========Lives=============== */
+.permaBlocked{
+    pointer-events: none;
+  }
+
 /*======= modal styling ==========*/
 
 /* The Modal (background) */
@@ -207,6 +206,8 @@ body {
 .group .btn:hover {
     background-color: rgb(199, 93, 22);
 }
+
+
 
 
 

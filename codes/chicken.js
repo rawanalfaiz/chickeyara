@@ -69,9 +69,34 @@ function limits(x,y, id){
         return false;
     }else {return true;}
 }
+//============================================================================
 
-function runAround(x,y){
-    
+// // Then we need to create a function that checks if the position of the car is not the same as the obstacle´s one.
+// function crash = function(obstacle) {
+// return !(((car.y) > obstacle.bottom()) ||
+//             ((car.x + 40) < obstacle.left()) ||
+//             ((car.x + 40) > obstacle.right()))
+// }
+
+// var rect1 = {x: 5, y: 5, width: 50, height: 50}
+// var rect2 = {x: 20, y: 10, width: 10, height: 10}
+
+// if (rect1.x < rect2.x + rect2.width &&
+//    rect1.x + rect1.width > rect2.x &&
+//    rect1.y < rect2.y + rect2.height &&
+//    rect1.height + rect1.y > rect2.y) {
+//     // collision detected!
+// }
+
+
+// var elements = []; 
+// Element.register = function (element) { 
+//     for (var i=0; i<elements.length; i++) { 
+//         if (elements[i]==element) break; 
+// }
+//============================================================================
+function runAround(x,y)
+{
     // ctx.clearRect(x, y, 100, 100);
     var intervalId;
     var rndmIntrvl = Math.ceil(Math.random()* 2000);// should pick a numberof secondes randomlly between 0 and 2000
@@ -143,30 +168,47 @@ function runAround(x,y){
     } // end switch
 
 
-    can.onclick = function (e) {    
-
+    can.onclick = function (e) {   
+        //new part== check if the there is another egg
+        // var newEgg = { };
+        // newEgg.x = x;
+        // newEgg.y = y;
+        
+        // ends here
+        
         if(e.clientX >= x && e.clientX <= x+100 && e.clientY >= y && e.clientY <= y+100 ){ //https://stackoverflow.com/questions/55677/how-do-i-get-the-coordinates-of-a-mouse-click-on-a-canvas-element/18053642#18053642
-            eggs.push({
-                xvalue: x,/// saving the coordinates for each egg
-                yvalue: y,
-            })
-            // console.log("chicken")
-            // console.log(eggs);            
+           var newEgg = {
+            xvalue: x,/// saving the coordinates for each egg
+            yvalue: y,
         }
         
+        
+        eggs.forEach(function(eachEgg){
+            eggs.push(newEgg);
+            if( Math.abs(newEgg.xvalue - eachEgg.xvalue) <=40 &&  Math.abs(newEgg.yvalue - eachEgg.yvalue)<=40){
+                console.log(eachEgg);
+                console.log(newEgg);
+                
+                eggs.pop(newEgg);
+                return ("OH NO!!!!!!");
+            }
+        })
+        // console.log("chicken")
+        // console.log(eggs);            
+        eggs.push(newEgg);
+        }   
     }
+    
 
-   
 
     setTimeout(function(){
          clearInterval(intervalId);
          runAround(x,y);
-    }, rndmIntrvl ) 
+    }, rndmIntrvl )
+
+}
 
    
-    
-    
-} // end function runAround
 
 
 

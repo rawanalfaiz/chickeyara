@@ -98,8 +98,8 @@ body {
 
 .header > ul >li{
     font-family: 'Amatic SC', cursive;
-    padding: 0 auto;
-    margin: 0 13%;
+    padding: 0;
+    margin: 0 12%;
     font-size: 40px;
     display: inline;
     text-decoration: none;
@@ -117,9 +117,10 @@ body {
 }
 
 /* ===========Lives=============== */
-.permaBlocked{
-    pointer-events: none;
-  }
+
+li img{
+    width: 45px;
+}
 
 /*======= modal styling ==========*/
 
@@ -141,8 +142,8 @@ body {
 
 /* Modal Content */
 .modal-content {
-    background-image: url("../imgs/modal.png");/* make the chicken  img as the background*/
-    background-size: 70% 70%;
+    background-image: url("../imgs/chicken5.png");/* make the chicken  img as the background*/
+    background-size: 80% 80%;
     background-repeat: no-repeat;
     background-position: top; /*to plase the baskgroung more towards the top*/
     margin: auto;
@@ -171,12 +172,12 @@ body {
 
 /*styling the game name*/
 .title{
-    color:rgb(253, 253, 253);
+    color:rgb(245, 244, 231);
     /* font-family: 'Luckiest Guy', cursive; */
     font-family: 'Amatic SC', cursive;
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: bolder;
-    text-shadow: 3px 7px hsla(230,40%,50%,1);
+    text-shadow: 3px 5px hsla(230,40%,50%,1);
     text-align: center;
     position: relative;
     top: 200px;

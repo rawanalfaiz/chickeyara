@@ -28,10 +28,12 @@ $(document).ready(function(){// when opening the index.html page on the browser
 
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
-        modal.style.display = "block";
+        openWind(); 
     }
 
-
+    var openWind = function(){
+        return modal.style.display = "block";
+    }
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
@@ -44,6 +46,8 @@ $(document).ready(function(){// when opening the index.html page on the browser
             modal.style.display = "none";
         }
     }
+
+
 
 //======================start the game button===============================
     // to make "start game" button clickble

@@ -6,6 +6,12 @@ var imagesource = "../imgs/chicken1.png";
 var eggImage = new Image();
 eggImage.src = "../imgs/egg1.png";
 var eggs = [];
+var eggCount = 0;
+var lives = 3;
+timer = 30;// 60 second
+var bgSound = new Audio("../sounds/Children Party.wav");
+bgSound.play();
+
 //=========================global variables==================================
 //================================work in grogress=====================================================
 // function createGameBoard() {
@@ -71,29 +77,6 @@ function limits(x,y, id){
 }
 //============================================================================
 
-// // Then we need to create a function that checks if the position of the car is not the same as the obstacle´s one.
-// function crash = function(obstacle) {
-// return !(((car.y) > obstacle.bottom()) ||
-//             ((car.x + 40) < obstacle.left()) ||
-//             ((car.x + 40) > obstacle.right()))
-// }
-
-// var rect1 = {x: 5, y: 5, width: 50, height: 50}
-// var rect2 = {x: 20, y: 10, width: 10, height: 10}
-
-// if (rect1.x < rect2.x + rect2.width &&
-//    rect1.x + rect1.width > rect2.x &&
-//    rect1.y < rect2.y + rect2.height &&
-//    rect1.height + rect1.y > rect2.y) {
-//     // collision detected!
-// }
-
-
-// var elements = []; 
-// Element.register = function (element) { 
-//     for (var i=0; i<elements.length; i++) { 
-//         if (elements[i]==element) break; 
-// }
 //============================================================================
 function runAround(x,y)
 {
@@ -199,13 +182,17 @@ function runAround(x,y)
         });
           if(crash === true) {
             eggCount--;
-            alert("crash");
+            lives--;
+            $("li").find('img:first').remove();
+            $(".eggs-count").text(eggCount);
+            alert("Oh You Broke Your Eggs");
             console.log(eggCount);
             setTimeout(function() {
               crash = false;
             }, 1);
           } else {
             eggCount++;
+            $(".eggs-count").text(eggCount);
             // console.log("chicken")
             // console.log(eggs);
             eggs.push(newEgg);
@@ -214,7 +201,32 @@ function runAround(x,y)
           }
         }
     };
+
+    var gameOver = function () {
+        return (lives === 0 || timer === 0); 
+    }
     
+    var openWind = function(){
+        return  document.getElementById('myModal').style.display = "block";
+        $(".eggs-count").text(eggCount);
+    }
+
+    if (gameOver()){
+        // alert("You're doneeee!!!!!!!");
+        // location.reload();
+        openWind();
+
+    }
+
+    setTimeout(function(){
+        $("#timer").text(timer);
+        if (timer > 0)
+            timer--;
+    }, 1000)
+
+    setTimeout(function(){
+        bgSound.play();
+    }, 529)
 
 
     setTimeout(function(){

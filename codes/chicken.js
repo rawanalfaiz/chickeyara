@@ -1,5 +1,6 @@
 //=========================global variables==================================
-var x = Math.floor(Math.random()* 1000);//choosing a horizental point randomlly 
+
+var x = Math.floor(Math.random()* 1000);//choosing a horizental point randomlly tp appear the chicken  
 var y = Math.floor(Math.random()* 350); //choosing a virtical point randomlly-- its been set to be 350 so it always choose a point in the middle
 var chickenImg = new Image();   
 var imagesource = "../imgs/chicken1.png";
@@ -12,52 +13,10 @@ timer = 30;// 60 second
 var bgSound = new Audio("../sounds/Children Party.wav");
 bgSound.play();
 
-//=========================global variables==================================
-//================================work in grogress=====================================================
-// function createGameBoard() {
-//     // declare variable "can" which will contain DOM element which has id with value "canvas1"
-//     this.can = document.getElementById('canvas1');
-
-//     // declare variable context (aka ctx) which will use previously defined canvas (.getContext('2d') always stays the same)
-//     this.ctx = this.can.getContext('2d');
-
-//     // fillStyle sets the color (we choose green)
-//     this.ctx.fillStyle="green";
-//     // fillRect fills rectangle
-//     //                x,y,width, height                
-//     //                | |  |   ____| 
-//     //                | |  |   |
-//     this.ctx.fillRect(0,0,500,600);
-//     this.ctx.fillStyle="gray";
-//     this.ctx.fillRect(50,0,400, 600);
-//     this.ctx.fillStyle="white";
-//     this.ctx.fillRect(60, 0, 10, 600)
-//     this.ctx.fillRect(430, 0, 10, 600);
-//     // next 6 lines regulate middle line
-//     this.ctx.lineWidth = 10;
-//     //           height of the line;   distance between the end of the line stroke and the beginning of the next one
-//     //                    |   _____________________________________|
-//     //                    |   |
-//     this.ctx.setLineDash([40,80]);
-//     this.ctx.strokeStyle = "white";
-//     // start position
-//     this.ctx.moveTo(245,0);
-//     // end position
-//     this.ctx.lineTo(245,600);
-//     // executes the drawing
-//     this.ctx.stroke();
-//     // next three lines regulate score
-//     this.ctx.fillStyle="pink";
-//     this.ctx.font = "50px Helvetica";
-//     this.ctx.fillText("Score: " + board.score, 0, 50);
-//   }
-
-//=====================================================================================
-
-
+//=========================end of global variables==================================
 
 function appear(){// better if named Chicken
-    chickenImg.src = imagesource;
+    chickenImg.src = imagesource;//
     ctx.drawImage(chickenImg,x,y, 100, 100);
     runAround(x,y);        
 }
@@ -75,6 +34,17 @@ function limits(x,y, id){
         return false;
     }else {return true;}
 }
+
+setTimeout(function(){
+    $("#timer").text(timer);
+    if (timer > 0)
+        timer--;
+}, 1000)
+
+setTimeout(function(){
+    bgSound.play();
+}, 529)
+
 //============================================================================
 
 //============================================================================
@@ -152,12 +122,7 @@ function runAround(x,y)
 
 
     can.onclick = function (e) {
-        //new part== check if the there is another egg
-        // var newEgg = { };
-        // newEgg.x = x;
-        // newEgg.y = y;
 
-        // ends here
         var crash = false;
         if(e.clientX >= x && e.clientX <= x+100 && e.clientY >= y && e.clientY <= y+100 ){ //https://stackoverflow.com/questions/55677/how-do-i-get-the-coordinates-of-a-mouse-click-on-a-canvas-element/18053642#18053642
            var newEgg = {
@@ -218,22 +183,15 @@ function runAround(x,y)
 
     }
 
-    setTimeout(function(){
-        $("#timer").text(timer);
-        if (timer > 0)
-            timer--;
-    }, 1000)
-
-    setTimeout(function(){
-        bgSound.play();
-    }, 529)
-
 
     setTimeout(function(){
          clearInterval(intervalId);
          runAround(x,y);
     }, rndmIntrvl )
 }
+
+
+
 
    
 
